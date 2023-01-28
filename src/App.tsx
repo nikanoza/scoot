@@ -1,4 +1,11 @@
-import { Outlet, RootRoute, Route } from "@tanstack/react-router";
+import {
+  lazy,
+  Outlet,
+  ReactRouter,
+  RootRoute,
+  Route,
+  RouterProvider,
+} from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu } from "@mui/material";
 
@@ -18,11 +25,22 @@ const rootRoute = new RootRoute({
 const indexRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: () => <></>,
+  onLoad: () => {
+    router.navigate({ replace: true, to: "/home" });
+  },
 });
 
+const homeRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "/home",
+  component: lazy(() => import("./views/Home")),
+});
+
+const routeTree = rootRoute.addChildren([indexRoute, homeRoute]);
+const router = new ReactRouter({ routeTree });
+
 function App() {
-  return <div className="App"></div>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
