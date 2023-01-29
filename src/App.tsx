@@ -7,16 +7,14 @@ import {
   RouterProvider,
 } from "@tanstack/react-router";
 import { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, createTheme, ThemeProvider } from "@mui/material";
 import { Header } from "./layouts";
 
 const rootRoute = new RootRoute({
   component: () => {
-    const [showMenu, setShowMenu] = useState<boolean>(true);
-
     return (
       <Box sx={{ width: "100vw", height: "100vh" }}>
-        <Header setShowMenu={setShowMenu} />
+        <Header />
         <Outlet />
       </Box>
     );
@@ -64,8 +62,18 @@ const routeTree = rootRoute.addChildren([
 ]);
 const router = new ReactRouter({ routeTree });
 
+const theme = createTheme({
+  typography: {
+    fontFamily: ["Lexend Deca", "Space Mono"].join(","),
+  },
+});
+
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
 export default App;
