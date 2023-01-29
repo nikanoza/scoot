@@ -7,17 +7,18 @@ import {
   RouterProvider,
 } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu } from "@mui/material";
+import { Box } from "@mui/material";
+import { Header } from "./layouts";
 
 const rootRoute = new RootRoute({
   component: () => {
-    const [showMenu, setShowMenu] = useState<boolean>(false);
+    const [showMenu, setShowMenu] = useState<boolean>(true);
 
     return (
-      <>
-        <Menu open={showMenu} />
+      <Box sx={{ width: "100vw", height: "100vh" }}>
+        <Header setShowMenu={setShowMenu} />
         <Outlet />
-      </>
+      </Box>
     );
   },
 });
@@ -36,7 +37,31 @@ const homeRoute = new Route({
   component: lazy(() => import("./views/Home")),
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, homeRoute]);
+const aboutRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "/about",
+  component: lazy(() => import("./views/About")),
+});
+
+const careersRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "/careers",
+  component: lazy(() => import("./views/Careers")),
+});
+
+const locationsRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "/locations",
+  component: lazy(() => import("./views/Locations")),
+});
+
+const routeTree = rootRoute.addChildren([
+  indexRoute,
+  homeRoute,
+  aboutRoute,
+  careersRoute,
+  locationsRoute,
+]);
 const router = new ReactRouter({ routeTree });
 
 function App() {
