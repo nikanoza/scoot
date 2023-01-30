@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import { RightArrow } from "../../svg";
 import { HomeHeroMobile } from "../../assets";
-import { HomeContent } from "../../components";
+import { HomeContent, Services } from "../../components";
 
 const Home = () => {
   return (
@@ -66,6 +66,7 @@ const Home = () => {
       </Box>
       <Box width="100%" padding="0 32px">
         <HomeContent />
+        <Services />
       </Box>
     </Box>
   );
