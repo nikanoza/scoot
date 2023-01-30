@@ -8,14 +8,15 @@ import {
 } from "@tanstack/react-router";
 import { useState } from "react";
 import { Box, createTheme, ThemeProvider } from "@mui/material";
-import { Header } from "./layouts";
+import { Footer, Header } from "./layouts";
 
 const rootRoute = new RootRoute({
   component: () => {
     return (
-      <Box sx={{ width: "100vw", height: "100vh" }}>
+      <Box width="100vw" height="100vh" sx={{ overflowX: "hidden" }}>
         <Header />
         <Outlet />
+        <Footer />
       </Box>
     );
   },

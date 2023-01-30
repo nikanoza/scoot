@@ -55,7 +55,7 @@ const Header = () => {
             }}
             children={
               <Link to="/home">
-                <Logo />
+                <Logo color="#495567" />
               </Link>
             }
           ></Box>
