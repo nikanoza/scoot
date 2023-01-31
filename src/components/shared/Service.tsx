@@ -9,7 +9,10 @@ type PropsType = {
 const Service: React.FC<PropsType> = ({ image, title, description }) => {
   return (
     <>
-      <Box width="100%">
+      <Box
+        width="100%"
+        sx={{ width: { xs: "100%", sm: "335px", md: "445px" } }}
+      >
         <img
           src={image}
           alt="poster"
@@ -20,12 +23,15 @@ const Service: React.FC<PropsType> = ({ image, title, description }) => {
         component="h2"
         fontFamily="Space Mono"
         fontWeight={700}
-        fontSize="32px"
-        lineHeight="32px"
         letterSpacing="-1.43px"
         textAlign="center"
         mt="56px"
         color="#495567"
+        sx={{
+          width: { sm: "457px" },
+          fontSize: { xs: "32px", sm: "48px" },
+          lineHeight: { xs: "32px", sm: "48px" },
+        }}
       >
         {title}
       </Typography>

@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { RightArrow } from "../../svg";
-import { HomeHeroMobile } from "../../assets";
+import { HomeHeroMobile, HomeHeroTablet } from "../../assets";
 import { HomeContent, Services } from "../../components";
 
 const Home = () => {
@@ -13,7 +13,10 @@ const Home = () => {
           flexDirection: "column",
           alignItems: "center",
           width: "100%",
-          backgroundImage: `url(${HomeHeroMobile})`,
+          backgroundImage: {
+            xs: `url(${HomeHeroMobile})`,
+            sm: `url(${HomeHeroTablet})`,
+          },
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",
         }}
@@ -22,10 +25,12 @@ const Home = () => {
           paragraph={true}
           fontFamily="Space Mono"
           fontWeight={700}
-          fontSize="40px"
           color="white"
-          lineHeight="40px"
           letterSpacing="-1.79px"
+          sx={{
+            fontSize: { xs: "40px", sm: "56px" },
+            lineHeight: { xs: "40px", sm: "56px" },
+          }}
           textAlign="center"
         >
           Scooter sharing made simple
@@ -55,7 +60,7 @@ const Home = () => {
             backgroundColor: "#FCB72B",
             textTransform: "capitalize",
             width: "180px",
-            mr: "20px",
+            mt: { xs: "20px", sm: "16px" },
           }}
         >
           Get Scootin

@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   IconButton,
+  List,
   Menu,
   MenuItem,
   MenuList,
@@ -13,6 +14,7 @@ import { useState } from "react";
 import { Logo } from "../svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Close } from "@mui/icons-material";
+import { display } from "@mui/system";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -34,7 +36,7 @@ const Header = () => {
               marginLeft: "16px",
               width: "20px",
               height: "16px",
-              display: { md: "none" },
+              display: { sm: "none" },
             }}
             style={{
               border: "none",
@@ -50,8 +52,8 @@ const Header = () => {
           </Button>
           <Box
             sx={{
-              margin: { xs: "auto", md: 0 },
-              transform: { xs: "translateX(-50%)", md: "translateX(0)" },
+              margin: { xs: "auto", sm: 0 },
+              transform: { xs: "translateX(-50%)", sm: "translateX(0)" },
             }}
             children={
               <Link to="/home">
@@ -59,6 +61,65 @@ const Header = () => {
               </Link>
             }
           ></Box>
+          <List
+            sx={{
+              listStyle: "none",
+              display: { xs: "none", sm: "flex" },
+              columnGap: "32px",
+              ml: { xs: "28.18px", md: "58.18px" },
+            }}
+          >
+            <Link
+              to="/about"
+              style={{
+                textDecoration: "none",
+                color: "#939CAA",
+                fontSize: "15px",
+                lineHeight: "25px",
+                fontFamily: "Space Mono",
+                fontWeight: 700,
+              }}
+            >
+              About
+            </Link>
+            <Link
+              to="/locations"
+              style={{
+                textDecoration: "none",
+                color: "#939CAA",
+                fontSize: "15px",
+                lineHeight: "25px",
+                fontFamily: "Space Mono",
+                fontWeight: 700,
+              }}
+            >
+              Locations
+            </Link>
+            <Link
+              to="/careers"
+              style={{
+                textDecoration: "none",
+                color: "#939CAA",
+                fontSize: "15px",
+                lineHeight: "25px",
+                fontFamily: "Space Mono",
+                fontWeight: 700,
+              }}
+            >
+              Careers
+            </Link>
+          </List>
+          <Button
+            sx={{
+              backgroundColor: "#FCB72B",
+              color: "white",
+              display: { xs: "none", sm: "block" },
+              ml: "auto",
+              width: { md: "192px" },
+            }}
+          >
+            Get Scootin
+          </Button>
         </Toolbar>
       </AppBar>
       <Menu

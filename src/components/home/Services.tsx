@@ -16,6 +16,18 @@ const Services = () => {
         <Box position="absolute" left="0" top="173px">
           <LeftDownwardArrow />
         </Box>
+        <Box
+          position="absolute"
+          borderRadius="50%"
+          right="-300px"
+          zIndex={-1}
+          sx={{
+            display: { xs: "none", sm: "block" },
+            width: { sm: "335px", md: "445px" },
+            height: { sm: "335px", md: "445px" },
+            backgroundColor: "#E5ECF4",
+          }}
+        ></Box>
         <Service
           image={Telemetry}
           title="Easy to use riding telemetry"
@@ -33,6 +45,18 @@ const Services = () => {
         <Box position="absolute" left="-200px" top="0">
           <RightArrow />
         </Box>
+        <Box
+          position="absolute"
+          borderRadius="50%"
+          left="-300px"
+          zIndex={-1}
+          sx={{
+            display: { xs: "none", sm: "block" },
+            width: { sm: "335px", md: "445px" },
+            height: { sm: "335px", md: "445px" },
+            backgroundColor: "#E5ECF4",
+          }}
+        ></Box>
         <Service
           image={NearYou}
           title="Coming to a city near you"
@@ -47,9 +71,26 @@ const Services = () => {
         position="relative"
         mt="120px"
       >
-        <Box position="absolute" left="120px" top="0">
+        <Box
+          position="absolute"
+          left="120px"
+          top="0"
+          sx={{ top: { sm: "75px" }, left: { sm: "250px" } }}
+        >
           <LeftDownwardArrow />
         </Box>
+        <Box
+          position="absolute"
+          borderRadius="50%"
+          right="-300px"
+          zIndex={-1}
+          sx={{
+            display: { xs: "none", sm: "block" },
+            width: { sm: "335px", md: "445px" },
+            height: { sm: "335px", md: "445px" },
+            backgroundColor: "#E5ECF4",
+          }}
+        ></Box>
         <Service
           image={Payments}
           title="Zero hassle payments"
