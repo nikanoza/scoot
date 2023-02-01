@@ -5,15 +5,27 @@ import { LeftDownwardArrow, LeftUpwardArrow, RightArrow } from "../../svg";
 
 const Services = () => {
   return (
-    <Box width="100%" mt="120px">
+    <Box width="100%" mt="120px" sx={{ padding: { xs: 0, xl: "0 165px" } }}>
       <Box
         width="100%"
         display="flex"
-        flexDirection="column"
         alignItems="center"
         position="relative"
+        sx={{
+          flexDirection: { xs: "column", lg: "row-reverse" },
+          justifyContent: { xs: "flex-start", lg: "flex-end" },
+          columnGap: { xs: 0, lg: "30px" },
+        }}
       >
-        <Box position="absolute" left="0" top="173px">
+        <Box
+          position="absolute"
+          top="173px"
+          sx={{
+            left: { xs: 0, lg: "auto" },
+            right: { xs: "auto", lg: "-32px", xl: "-197px" },
+            top: { xs: "173px", lg: "330px" },
+          }}
+        >
           <LeftDownwardArrow />
         </Box>
         <Box
@@ -37,12 +49,20 @@ const Services = () => {
       <Box
         width="100%"
         display="flex"
-        flexDirection="column"
         alignItems="center"
         position="relative"
         mt="120px"
+        sx={{
+          flexDirection: { xs: "column", lg: "row" },
+          justifyContent: { xs: "flex-start", lg: "flex-end" },
+          columnGap: { xs: 0, lg: "30px" },
+        }}
       >
-        <Box position="absolute" left="-200px" top="0">
+        <Box
+          position="absolute"
+          top="0"
+          sx={{ left: { xs: "-200px", lg: "-100px", xl: "-265px" } }}
+        >
           <RightArrow />
         </Box>
         <Box
@@ -66,16 +86,21 @@ const Services = () => {
       <Box
         width="100%"
         display="flex"
-        flexDirection="column"
         alignItems="center"
         position="relative"
         mt="120px"
+        sx={{
+          flexDirection: { xs: "column", lg: "row-reverse" },
+          justifyContent: { xs: "flex-start", lg: "flex-end" },
+          columnGap: { xs: 0, lg: "30px" },
+        }}
       >
         <Box
           position="absolute"
-          left="120px"
-          top="0"
-          sx={{ top: { sm: "75px" }, left: { sm: "250px" } }}
+          sx={{
+            top: { sm: "75px" },
+            right: { xs: "-450px", lg: "-232px", xl: "-397px" },
+          }}
         >
           <LeftDownwardArrow />
         </Box>

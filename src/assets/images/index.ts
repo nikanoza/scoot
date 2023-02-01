@@ -6,3 +6,4 @@ export { default as NearYou } from "./near-you.jpg";
 export { default as Payments } from "./payments.jpg";
 export { default as FooterMobile } from "./footer-mobile.png";
 export { default as FooterTablet } from "./footer-tablet.png";
+export { default as FooterDesktop } from "./footer-desktop.png";

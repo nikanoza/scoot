@@ -7,7 +7,7 @@ import {
   Logo,
   Twitter,
 } from "../svg";
-import { FooterMobile, FooterTablet } from "../assets";
+import { FooterDesktop, FooterMobile, FooterTablet } from "../assets";
 import { Link } from "@tanstack/react-router";
 
 const Footer = () => {
@@ -17,13 +17,17 @@ const Footer = () => {
         width="100%"
         display="flex"
         alignItems="center"
-        flexDirection="column"
         sx={{
           backgroundImage: {
             xs: `url(${FooterMobile})`,
             sm: `url(${FooterTablet})`,
+            lg: `url(${FooterDesktop})`,
           },
-          padding: { xs: "88px 0", sm: "62px 0" },
+          flexDirection: { xs: "column", lg: "row" },
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          justifyContent: { xs: "flex-start", lg: "space-between" },
+          padding: { xs: "88px 0", sm: "62px 0", lg: "100px 165px" },
         }}
       >
         <Typography
@@ -45,8 +49,8 @@ const Footer = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          mt="40px"
           columnGap="12px"
+          sx={{ mt: { xs: "40px", lg: 0 } }}
         >
           <AppStore />
           <GooglePlay />
@@ -54,15 +58,13 @@ const Footer = () => {
       </Box>
       <Box
         width="100%"
-        padding="64px 0 88px 0"
         display="flex"
-        flexDirection="column"
         alignItems="center"
         sx={{
           backgroundColor: "#333A44",
-          flexDirection: { sm: "row" },
+          flexDirection: { xs: "column", sm: "row" },
           columnGap: { sm: "20px" },
-          padding: { sm: "35px 40px" },
+          padding: { xs: "64px 0 88px 0", sm: "35px 40px", lg: "35px 165px" },
         }}
       >
         <Box
@@ -129,6 +131,7 @@ const Footer = () => {
             alignItems: "center",
             columnGap: "24px",
             mt: { xs: "85px", sm: 0 },
+            ml: { xs: 0, lg: "auto" },
           }}
         >
           <Facebook />

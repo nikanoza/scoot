@@ -28,7 +28,9 @@ const Header = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: "white" }}>
-        <Toolbar sx={{ padding: 0 }}>
+        <Toolbar
+          sx={{ padding: { xs: 0, md: "20px 100px", lg: "30px 145px" } }}
+        >
           <Button
             disableElevation={true}
             sx={{
