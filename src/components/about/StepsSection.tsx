@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
-import { Step } from "components/shared";
+import { Box, List, Typography } from "@mui/material";
+import { OurCommunity, OurIntegrity, OurTech } from "../../assets";
+import Step from "../shared/Step";
 
 const StepsSection = () => {
   return (
@@ -20,7 +21,34 @@ const StepsSection = () => {
       >
         Our values
       </Typography>
-      <Step />
+      <List
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column" },
+          width: "100%",
+          alignItems: "center",
+          rowGap: "56px",
+        }}
+      >
+        <Step
+          image={OurTech}
+          title="Our tech"
+          number="01"
+          description="We’re using cutting edge technology to drive accessible urban transportation forward. Our fully electric scooters are a joy to ride!"
+        />
+        <Step
+          image={OurIntegrity}
+          title="Our integrityh"
+          number="02"
+          description="We are fully committed to deliver a great yet safe, sustainable micro-mobility experience in every city we serve."
+        />
+        <Step
+          image={OurCommunity}
+          title="Our community"
+          number="03"
+          description="We support every community we serve. All workers are paid a living wage based on their location and are Scoot employees."
+        />
+      </List>
     </Box>
   );
 };

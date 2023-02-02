@@ -13,3 +13,5 @@ export { default as AboutHeroDesktop } from "./about-hero-desktop.jpg";
 export { default as DigitalEra } from "./digital-era.jpg";
 export { default as BetterLiving } from "./better-living.jpg";
 export { default as OurTech } from "./our-tech.jpg";
+export { default as OurIntegrity } from "./our-integrity.jpg";
+export { default as OurCommunity } from "./our-community.jpg";

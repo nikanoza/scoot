@@ -35,6 +35,7 @@ const Step: React.FC<PropsType> = ({ image, title, description, number }) => {
             fontSize: { xs: "24px", sm: "28px" },
             lineHeight: { xs: "28px", sm: "48px" },
             textAlign: { xs: "center", lg: "left" },
+            mt: { xs: "-48px" },
           }}
           display="flex"
           alignItems="center"
