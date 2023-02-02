@@ -2,7 +2,6 @@ import {
   AppBar,
   Box,
   Button,
-  IconButton,
   List,
   Menu,
   MenuItem,
@@ -14,7 +13,6 @@ import { useState } from "react";
 import { Logo } from "../svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Close } from "@mui/icons-material";
-import { display } from "@mui/system";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -26,10 +24,17 @@ const Header = () => {
     setAnchorEl(null);
   };
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} width="100%">
       <AppBar position="static" sx={{ backgroundColor: "white" }}>
         <Toolbar
-          sx={{ padding: { xs: 0, md: "20px 100px", lg: "30px 145px" } }}
+          sx={{
+            padding: {
+              xs: 0,
+              sm: "0 40px",
+              md: "20px 100px",
+              lg: "30px 145px",
+            },
+          }}
         >
           <Button
             disableElevation={true}
@@ -134,9 +139,51 @@ const Header = () => {
         }}
       >
         <MenuList>
-          <MenuItem onClick={handleClose}>Home</MenuItem>
-          <MenuItem onClick={handleClose}>About</MenuItem>
-          <MenuItem onClick={handleClose}>Careers</MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link
+              to="/home"
+              style={{
+                textDecoration: "none",
+                color: "#939CAA",
+                fontSize: "15px",
+                lineHeight: "25px",
+                fontFamily: "Space Mono",
+                fontWeight: 700,
+              }}
+            >
+              Home
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link
+              to="/about"
+              style={{
+                textDecoration: "none",
+                color: "#939CAA",
+                fontSize: "15px",
+                lineHeight: "25px",
+                fontFamily: "Space Mono",
+                fontWeight: 700,
+              }}
+            >
+              About
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link
+              to="/careers"
+              style={{
+                textDecoration: "none",
+                color: "#939CAA",
+                fontSize: "15px",
+                lineHeight: "25px",
+                fontFamily: "Space Mono",
+                fontWeight: 700,
+              }}
+            >
+              careers
+            </Link>
+          </MenuItem>
         </MenuList>
         <Button
           sx={{ backgroundColor: "#FCB72B", color: "white", width: "192px" }}

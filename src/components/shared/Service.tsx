@@ -4,9 +4,17 @@ type PropsType = {
   image: string;
   title: string;
   description: string;
+  btnText: string;
+  hiddenBtn?: boolean;
 };
 
-const Service: React.FC<PropsType> = ({ image, title, description }) => {
+const Service: React.FC<PropsType> = ({
+  image,
+  title,
+  description,
+  btnText,
+  hiddenBtn,
+}) => {
   return (
     <>
       <Box
@@ -53,17 +61,19 @@ const Service: React.FC<PropsType> = ({ image, title, description }) => {
         >
           {description}
         </Typography>
-        <Button
-          sx={{
-            backgroundColor: "#FCB72B",
-            color: "white",
-            width: "192px",
-            mt: "32px",
-            mr: { xs: 0, lg: "auto" },
-          }}
-        >
-          Learn More
-        </Button>
+        {!hiddenBtn ? (
+          <Button
+            sx={{
+              backgroundColor: "#FCB72B",
+              color: "white",
+              width: "192px",
+              mt: "32px",
+              mr: { xs: 0, lg: "auto" },
+            }}
+          >
+            {btnText}
+          </Button>
+        ) : null}
       </Box>
     </>
   );

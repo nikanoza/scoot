@@ -5,10 +5,17 @@ import { HomeContent, Services } from "../../components";
 
 const Home = () => {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box
+      sx={{
+        width: "100%",
+      }}
+    >
       <Box
         sx={{
-          padding: { xs: "115px 28px 34px 32px", lg: "153px 160px" },
+          padding: {
+            xs: "115px 28px 34px 32px",
+            lg: "153px 160px",
+          },
           display: "flex",
           flexDirection: "column",
           alignItems: { xs: "center", lg: "flex-start" },
